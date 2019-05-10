@@ -3,8 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "start": "react-native start --port=8088",
+    "test": "jest",
+    "run:ios": "cd /Users/utting/htdocs/ash/_self/self-native-app/Self && react-native run-ios",
+    "set-port": "react-native-port-patcher --new-port 8088",
+    "clear": "watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-*"
   },
   "dependencies": {
     "react": "16.8.3",
@@ -16,6 +19,7 @@
     "babel-jest": "24.8.0",
     "jest": "24.8.0",
     "metro-react-native-babel-preset": "0.54.0",
+    "react-native-port-patcher": "^1.0.3",
     "react-test-renderer": "16.8.3"
   },
   "jest": {

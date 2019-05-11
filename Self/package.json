@@ -3,20 +3,26 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "flow": "flow",
     "start": "react-native start --port=8088",
     "test": "jest",
     "run:ios": "cd /Users/utting/htdocs/ash/_self/self-native-app/Self && react-native run-ios",
     "set-port": "react-native-port-patcher --new-port 8088",
-    "clear": "watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-*"
+    "clear": "watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-*",
+    "postinstall": "yarn set-port"
   },
   "dependencies": {
+    "flow": "^0.2.3",
     "react": "16.8.3",
     "react-native": "0.59.8"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
     "@babel/runtime": "7.4.4",
+    "babel-cli": "^6.26.0",
     "babel-jest": "24.8.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.98.1",
     "jest": "24.8.0",
     "metro-react-native-babel-preset": "0.54.0",
     "react-native-port-patcher": "^1.0.3",

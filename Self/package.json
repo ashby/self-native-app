@@ -4,17 +4,25 @@
   "private": true,
   "scripts": {
     "flow": "flow",
-    "start": "react-native start --port=8088",
+    "start": "react-native start --port=8088 -- --reset-cache",
     "test": "jest",
     "run:ios": "cd /Users/utting/htdocs/ash/_self/self-native-app/Self && react-native run-ios",
     "set-port": "react-native-port-patcher --new-port 8088",
-    "clear": "watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-*",
+    "clear": "watchman watch-del-all && rm -rf node_modules && npm install && rm -rf /tmp/react-native-packager-cache-* && rm -rf /tmp/metro-bundler-cache-* && rm -rf /tmp/haste-map-react-native-packager-*",
     "postinstall": "yarn set-port"
   },
   "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "apollo-client": "^2.5.1",
     "flow": "^0.2.3",
+    "graphql": "^14.3.0",
+    "lodash": "^4.17.11",
     "react": "16.8.3",
-    "react-native": "0.59.8"
+    "react-apollo": "^2.5.5",
+    "react-native": "0.59.8",
+    "react-native-gesture-handler": "^1.2.1",
+    "react-navigation": "^3.10.1",
+    "strip-ansi": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
